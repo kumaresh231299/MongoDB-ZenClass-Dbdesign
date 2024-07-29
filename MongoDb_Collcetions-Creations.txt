@@ -1,0 +1,411 @@
+// Database Creation
+
+use guvi
+
+//Create Seven Collections for a requirements and insert data.
+
+1.Collection_Mentor
+db.mentors.insertMany(
+[ 
+{mentor_name: 'Rupan', batch_id: 'FSDWDT-58' },
+{mentor_name: 'Thiru', batch_id: 'FSDWET-60' },
+{mentor_name: 'Suresh', batch_id: 'FSDWDE-63'}
+ ]
+);
+
+mentor_id's
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('66a338ac84e8989bb31796fe'),
+    '1': ObjectId('66a338ac84e8989bb31796ff'),
+    '2': ObjectId('66a338ac84e8989bb3179700')
+  }
+}
+
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+2.Collection_User
+db.users.insertMany(
+[ 
+{ user_name:' Kumaresan', email: 'kum@gmail.com', age: 24, mentor_id: ObjectId('66a338ac84e8989bb31796fe') },
+{ user_name: 'Dinesh', email: 'dinu@gmail.com', age: 23, mentor_id: ObjectId('66a338ac84e8989bb31796fe') },
+{ user_name: 'Hari', email: 'Hari@gmail.com', age: 24, mentor_id: ObjectId('66a338ac84e8989bb31796fe') },
+{ user_name: 'Siddharth', email: 'siddhu@gmail.com', age: 25, mentor_id: ObjectId('66a338ac84e8989bb31796fe') },
+{ user_name: 'Jagatheesh', email: 'jaga@gmail.com', age: 23, mentor_id: ObjectId('66a338ac84e8989bb31796fe') },
+{ user_name: 'Naveen', email: 'ram@gmail.com', age: 27, mentor_id: ObjectId('66a338ac84e8989bb31796fe') },
+{ user_name: 'Gowtham', email: 'gow@gmail.com', age: 24, mentor_id: ObjectId('66a338ac84e8989bb31796fe') },
+{ user_name: 'Bala', email: 'bala@gmail.com', age: 26, mentor_id: ObjectId('66a338ac84e8989bb31796fe') },
+{ user_name: 'Sudharsan', email: 'sudhar@gmail.com', age: 26, mentor_id: ObjectId('66a338ac84e8989bb31796fe') },
+{ user_name: 'Liju', email: 'liju@gmail.com', age: 21, mentor_id: ObjectId('66a338ac84e8989bb31796fe') },
+{ user_name:' Deeraj', email: 'deer@gmail.com', age: 24, mentor_id: ObjectId('66a338ac84e8989bb31796fe') },
+{ user_name: 'Sabarish', email: 'sabari@gmail.com', age: 23, mentor_id: ObjectId('66a338ac84e8989bb31796fe') },
+{ user_name: 'Madan', email: 'madan@gmail.com', age: 24, mentor_id: ObjectId('66a338ac84e8989bb31796fe') },
+{ user_name: 'Gokul', email: 'gokul@gmail.com', age: 27, mentor_id: ObjectId('66a338ac84e8989bb31796fe') },
+{ user_name: 'sathish', email: 'sathish@gmail.com', age: 25, mentor_id: ObjectId('66a338ac84e8989bb31796fe') },
+{ user_name: 'Narendran', email: 'narendran@gmail.com', age: 23, mentor_id: ObjectId('66a338ac84e8989bb31796ff') },
+{ user_name: 'sandeep', email: 'gow@gmail.com', age: 25, mentor_id: ObjectId('66a338ac84e8989bb31796ff') },
+{ user_name: 'Abinesh', email: 'abi@gmail.com', age: 26, mentor_id: ObjectId('66a338ac84e8989bb3179700') },
+{ user_name: 'Mukesh', email: 'mukesh@gmail.com', age: 26, mentor_id: ObjectId('66a338ac84e8989bb3179700') },
+{ user_name: 'Kuna', email: 'kuna@gmail.com', age: 23, mentor_id: ObjectId('66a338ac84e8989bb31796fe')}
+ ]
+);
+
+user_id's
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('66a33a3784e8989bb3179701'),
+    '1': ObjectId('66a33a3784e8989bb3179702'),
+    '2': ObjectId('66a33a3784e8989bb3179703'),
+    '3': ObjectId('66a33a3784e8989bb3179704'),
+    '4': ObjectId('66a33a3784e8989bb3179705'),
+    '5': ObjectId('66a33a3784e8989bb3179706'),
+    '6': ObjectId('66a33a3784e8989bb3179707'),
+    '7': ObjectId('66a33a3784e8989bb3179708'),
+    '8': ObjectId('66a33a3784e8989bb3179709'),
+    '9': ObjectId('66a33a3784e8989bb317970a'),
+    '10': ObjectId('66a33a3784e8989bb317970b'),
+    '11': ObjectId('66a33a3784e8989bb317970c'),
+    '12': ObjectId('66a33a3784e8989bb317970d'),
+    '13': ObjectId('66a33a3784e8989bb317970e'),
+    '14': ObjectId('66a33a3784e8989bb317970f'),
+    '15': ObjectId('66a33a3784e8989bb3179710'),
+    '16': ObjectId('66a33a3784e8989bb3179711'),
+    '17': ObjectId('66a33a3784e8989bb3179712'),
+    '18': ObjectId('66a33a3784e8989bb3179713'),
+    '19': ObjectId('66a33a3784e8989bb3179714')
+  }
+}
+
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+3.Collection_Codekata
+db.codekata.insertMany(
+[ 
+{ user_id: ObjectId('66a33a3784e8989bb3179701'), problem_solved: '88%' },
+{ user_id: ObjectId('66a33a3784e8989bb3179702'), problem_solved: '95%' },
+{ user_id: ObjectId('66a33a3784e8989bb3179703'), problem_solved: '70%' },
+{ user_id: ObjectId('66a33a3784e8989bb3179704'), problem_solved: '73%' },
+{ user_id: ObjectId('66a33a3784e8989bb3179705'), problem_solved: '23%' },
+{ user_id: ObjectId('66a33a3784e8989bb3179706'), problem_solved: '10%'  },
+{ user_id: ObjectId('66a33a3784e8989bb3179707'), problem_solved: '61%' },
+{ user_id: ObjectId('66a33a3784e8989bb3179708'), problem_solved: '55%' },
+{ user_id: ObjectId('66a33a3784e8989bb3179709'), problem_solved: '75%' },
+{ user_id: ObjectId('66a33a3784e8989bb317970a'), problem_solved: '34%' },
+{ user_id: ObjectId('66a33a3784e8989bb317970b'), problem_solved: '86%' },
+{ user_id: ObjectId('66a33a3784e8989bb317970c'), problem_solved: '77%' },
+{ user_id: ObjectId('66a33a3784e8989bb317970d'), problem_solved: '90%' },
+{ user_id: ObjectId('66a33a3784e8989bb317970e'), problem_solved: '27%' },
+{ user_id: ObjectId('66a33a3784e8989bb317970f'), problem_solved: '63%' },
+{ user_id: ObjectId('66a33a3784e8989bb3179710'), problem_solved: '80%'  },
+{ user_id: ObjectId('66a33a3784e8989bb3179711'), problem_solved: '61%' },
+{ user_id: ObjectId('66a33a3784e8989bb3179712'), problem_solved: '45%' },
+{ user_id: ObjectId('66a33a3784e8989bb3179713'), problem_solved: '43%' },
+{ user_id: ObjectId('66a33a3784e8989bb3179714'), problem_solved: '100%' }
+ ]
+);
+
+codekata_id's
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('66a33bcb84e8989bb3179715'),
+    '1': ObjectId('66a33bcb84e8989bb3179716'),
+    '2': ObjectId('66a33bcb84e8989bb3179717'),
+    '3': ObjectId('66a33bcb84e8989bb3179718'),
+    '4': ObjectId('66a33bcb84e8989bb3179719'),
+    '5': ObjectId('66a33bcb84e8989bb317971a'),
+    '6': ObjectId('66a33bcb84e8989bb317971b'),
+    '7': ObjectId('66a33bcb84e8989bb317971c'),
+    '8': ObjectId('66a33bcb84e8989bb317971d'),
+    '9': ObjectId('66a33bcb84e8989bb317971e'),
+    '10': ObjectId('66a33bcb84e8989bb317971f'),
+    '11': ObjectId('66a33bcb84e8989bb3179720'),
+    '12': ObjectId('66a33bcb84e8989bb3179721'),
+    '13': ObjectId('66a33bcb84e8989bb3179722'),
+    '14': ObjectId('66a33bcb84e8989bb3179723'),
+    '15': ObjectId('66a33bcb84e8989bb3179724'),
+    '16': ObjectId('66a33bcb84e8989bb3179725'),
+    '17': ObjectId('66a33bcb84e8989bb3179726'),
+    '18': ObjectId('66a33bcb84e8989bb3179727'),
+    '19': ObjectId('66a33bcb84e8989bb3179728')
+  }
+}
+
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+4.Collection_Topics
+db.topics.insertMany(
+[ 
+{  topic_name: 'Html, Css'},
+{  topic_name: 'Bootstrap, TailwindCss'},
+{  topic_name: 'Basic Js'},
+{  topic_name: 'DOM'},
+{  topic_name: 'ReactJs Basics'},
+{  topic_name: 'React Hooks'},
+{  topic_name: 'Redux'},
+{  topic_name: 'MySQL'},
+{  topic_name: 'MongoDb'},
+{  topic_name: 'NodeJs'}
+]
+);
+
+topics_id's
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('66a33cb084e8989bb3179729'),
+    '1': ObjectId('66a33cb084e8989bb317972a'),
+    '2': ObjectId('66a33cb084e8989bb317972b'),
+    '3': ObjectId('66a33cb084e8989bb317972c'),
+    '4': ObjectId('66a33cb084e8989bb317972d'),
+    '5': ObjectId('66a33cb084e8989bb317972e'),
+    '6': ObjectId('66a33cb084e8989bb317972f'),
+    '7': ObjectId('66a33cb084e8989bb3179730'),
+    '8': ObjectId('66a33cb084e8989bb3179731'),
+    '9': ObjectId('66a33cb084e8989bb3179732')
+  }
+}
+
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+5.Collection_Tasks
+db.tasks.insertMany(
+[ 
+{ user_id: ObjectId('66a33a3784e8989bb3179701'), topic_id: ObjectId('66a33cb084e8989bb3179729'), task_name:'Create a Kids Park webpage details in listView and timings in table, use design css.', task_submission_date: '30-10-2020', submission_status: 'true' },
+{ user_id: ObjectId('66a33a3784e8989bb3179702'), topic_id: ObjectId('66a33cb084e8989bb317972a'), task_name:'Create a simple card view using Bootstrap or TailwindCss', task_submission_date: '03-10-2020', submission_status: 'true' },
+{ user_id: ObjectId('66a33a3784e8989bb3179703'), topic_id: ObjectId('66a33cb084e8989bb317972b'), task_name:'Create a Calculator', task_submission_date: '27-10-2020', submission_status: 'false' },
+{ user_id: ObjectId('66a33a3784e8989bb3179704'), topic_id: ObjectId('66a33cb084e8989bb317972c'), task_name:'Display the rest Countries details', task_submission_date: '10-10-2020', submission_status: 'true' },
+{ user_id: ObjectId('66a33a3784e8989bb3179705'), topic_id: ObjectId('66a33cb084e8989bb317972d'), task_name:'Create Shopping card page', task_submission_date: '15-10-2020', submission_status: 'true' },
+{ user_id: ObjectId('66a33a3784e8989bb3179706'), topic_id: ObjectId('66a33cb084e8989bb317972e'), task_name:'Library Management website needed', task_submission_date: '17-10-2020', submission_status: 'false' },
+{ user_id: ObjectId('66a33a3784e8989bb3179707'), topic_id: ObjectId('66a33cb084e8989bb317972f'), task_name:'E-commerce website like facebook without payment page.', task_submission_date: '20-10-2020', submission_status: 'false' },
+{ user_id: ObjectId('66a33a3784e8989bb3179708'), topic_id: ObjectId('66a33cb084e8989bb3179730'), task_name:'Guvi Db design', task_submission_date: '25-10-2020', submission_status: 'true' },
+{ user_id: ObjectId('66a33a3784e8989bb3179709'), topic_id: ObjectId('66a33cb084e8989bb3179731'), task_name:'Basic Query executions', task_submission_date: '02-10-2020', submission_status: 'false' },
+{ user_id: ObjectId('66a33a3784e8989bb317970a'), topic_id: ObjectId('66a33cb084e8989bb3179732'), task_name:'Hall Booking Backend CRUD Operations', task_submission_date: '31-10-2020', submission_status: 'true' },
+{ user_id: ObjectId('66a33a3784e8989bb317970b'), topic_id: ObjectId('66a33cb084e8989bb3179729'), task_name:'Create a Kids Park webpage details in listView and timings in table, use design css.', task_submission_date: '01-10-2020', submission_status: 'true' },
+{ user_id: ObjectId('66a33a3784e8989bb317970c'), topic_id: ObjectId('66a33cb084e8989bb317972a'), task_name:'Create a simple card view using Bootstrap or TailwindCss', task_submission_date: '03-10-2020', submission_status: 'true' },
+{ user_id: ObjectId('66a33a3784e8989bb317970d'), topic_id: ObjectId('66a33cb084e8989bb317972b'), task_name:'Create a Calculator', task_submission_date: '27-10-2020', submission_status: 'false' },
+{ user_id: ObjectId('66a33a3784e8989bb317970e'), topic_id: ObjectId('66a33cb084e8989bb317972c'), task_name:'Display the rest Countries details', task_submission_date: '10-10-2020', submission_status: 'true' },
+{ user_id: ObjectId('66a33a3784e8989bb317970f'), topic_id: ObjectId('66a33cb084e8989bb317972d'), task_name:'Create Shopping card page', task_submission_date: '15-10-2020', submission_status: 'true' },
+{ user_id: ObjectId('66a33a3784e8989bb3179710'), topic_id: ObjectId('66a33cb084e8989bb317972e'), task_name:'Library Management website needed', task_submission_date: '17-10-2020', submission_status: 'false' },
+{ user_id: ObjectId('66a33a3784e8989bb3179711'), topic_id: ObjectId('66a33cb084e8989bb317972f'), task_name:'E-commerce website like facebook without payment page.', task_submission_date: '20-10-2020', submission_status: 'false' },
+{ user_id: ObjectId('66a33a3784e8989bb3179712'), topic_id: ObjectId('66a33cb084e8989bb3179730'), task_name:'Guvi Db design', task_submission_date: '25-10-2020', submission_status: 'true' },
+{ user_id: ObjectId('66a33a3784e8989bb3179713'), topic_id: ObjectId('66a33cb084e8989bb3179731'), task_name:'Basic Query executions', task_submission_date: '02-10-2020', submission_status: 'false' },
+{ user_id: ObjectId('66a33a3784e8989bb3179714'), topic_id:ObjectId('66a33cb084e8989bb3179732'), task_name:'Hall Booking Backend CRUD Operations', task_submission_date: '31-10-2020', submission_status: 'true' }
+ ]
+);
+
+tasks_id's
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('66a3419684e8989bb3179733'),
+    '1': ObjectId('66a3419684e8989bb3179734'),
+    '2': ObjectId('66a3419684e8989bb3179735'),
+    '3': ObjectId('66a3419684e8989bb3179736'),
+    '4': ObjectId('66a3419684e8989bb3179737'),
+    '5': ObjectId('66a3419684e8989bb3179738'),
+    '6': ObjectId('66a3419684e8989bb3179739'),
+    '7': ObjectId('66a3419684e8989bb317973a'),
+    '8': ObjectId('66a3419684e8989bb317973b'),
+    '9': ObjectId('66a3419684e8989bb317973c'),
+    '10': ObjectId('66a3419684e8989bb317973d'),
+    '11': ObjectId('66a3419684e8989bb317973e'),
+    '12': ObjectId('66a3419684e8989bb317973f'),
+    '13': ObjectId('66a3419684e8989bb3179740'),
+    '14': ObjectId('66a3419684e8989bb3179741'),
+    '15': ObjectId('66a3419684e8989bb3179742'),
+    '16': ObjectId('66a3419684e8989bb3179743'),
+    '17': ObjectId('66a3419684e8989bb3179744'),
+    '18': ObjectId('66a3419684e8989bb3179745'),
+    '19': ObjectId('66a3419684e8989bb3179746')
+  }
+}
+
+
+format 'dd-mm-yyyy' to 'yyyy-mm-dd' Date updated,
+
+db.tasks.updateMany(
+  { task_submission_date: { $regex: /^(\d{2})-(\d{2})-(\d{4})$/ } },
+  [
+    {
+      $set: {
+        task_submission_date: {
+          $concat: [
+            { $arrayElemAt: [{ $split: ["$task_submission_date", "-"] }, 2] },
+            "-",
+            { $arrayElemAt: [{ $split: ["$task_submission_date", "-"] }, 1] },
+            "-",
+            { $arrayElemAt: [{ $split: ["$task_submission_date", "-"] }, 0] }
+          ]
+        }
+      }
+    }
+  ]
+);
+
+updation result :
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 20,
+  modifiedCount: 20,
+  upsertedCount: 0
+}
+
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+6.Collection_Attendance
+db.attendance.insertMany(
+[ 
+{ user_id: ObjectId('66a33a3784e8989bb3179701'), topic_id: ObjectId('66a33cb084e8989bb3179729'), attended: true },
+{ user_id: ObjectId('66a33a3784e8989bb3179702'), topic_id: ObjectId('66a33cb084e8989bb317972a'), attended: false },
+{ user_id: ObjectId('66a33a3784e8989bb3179703'), topic_id: ObjectId('66a33cb084e8989bb317972b'), attended: true },
+{ user_id: ObjectId('66a33a3784e8989bb3179704'), topic_id: ObjectId('66a33cb084e8989bb317972c'), attended: false },
+{ user_id: ObjectId('66a33a3784e8989bb3179705'), topic_id: ObjectId('66a33cb084e8989bb317972d'), attended: true },
+{ user_id: ObjectId('66a33a3784e8989bb3179706'), topic_id: ObjectId('66a33cb084e8989bb317972e'), attended: true },
+{ user_id: ObjectId('66a33a3784e8989bb3179707'), topic_id: ObjectId('66a33cb084e8989bb317972f'), attended: false },
+{ user_id: ObjectId('66a33a3784e8989bb3179708'), topic_id: ObjectId('66a33cb084e8989bb3179730'), attended: false },
+{ user_id: ObjectId('66a33a3784e8989bb3179709'), topic_id: ObjectId('66a33cb084e8989bb3179731'), attended: false },
+{ user_id: ObjectId('66a33a3784e8989bb317970a'), topic_id: ObjectId('66a33cb084e8989bb3179732'), attended: false },
+{ user_id: ObjectId('66a33a3784e8989bb317970b'), topic_id: ObjectId('66a33cb084e8989bb3179729'), attended: true },
+{ user_id: ObjectId('66a33a3784e8989bb317970c'), topic_id: ObjectId('66a33cb084e8989bb317972a'), attended: false },
+{ user_id: ObjectId('66a33a3784e8989bb317970d'), topic_id: ObjectId('66a33cb084e8989bb317972b'), attended: true },
+{ user_id: ObjectId('66a33a3784e8989bb317970e'), topic_id: ObjectId('66a33cb084e8989bb317972c'), attended: false },
+{ user_id: ObjectId('66a33a3784e8989bb317970f'), topic_id: ObjectId('66a33cb084e8989bb317972d'), attended: true },
+{ user_id: ObjectId('66a33a3784e8989bb3179710'), topic_id: ObjectId('66a33cb084e8989bb317972e'), attended: true },
+{ user_id: ObjectId('66a33a3784e8989bb3179711'), topic_id: ObjectId('66a33cb084e8989bb317972f'), attended: true },
+{ user_id: ObjectId('66a33a3784e8989bb3179712'), topic_id: ObjectId('66a33cb084e8989bb3179730'), attended: false },
+{ user_id: ObjectId('66a33a3784e8989bb3179713'), topic_id: ObjectId('66a33cb084e8989bb3179731'), attended: false },
+{ user_id: ObjectId('66a33a3784e8989bb3179714'), topic_id: ObjectId('66a33cb084e8989bb3179732'), attended: true }
+ ]
+);
+
+attendance_id's
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('66a344aa84e8989bb3179747'),
+    '1': ObjectId('66a344aa84e8989bb3179748'),
+    '2': ObjectId('66a344aa84e8989bb3179749'),
+    '3': ObjectId('66a344aa84e8989bb317974a'),
+    '4': ObjectId('66a344aa84e8989bb317974b'),
+    '5': ObjectId('66a344aa84e8989bb317974c'),
+    '6': ObjectId('66a344aa84e8989bb317974d'),
+    '7': ObjectId('66a344aa84e8989bb317974e'),
+    '8': ObjectId('66a344aa84e8989bb317974f'),
+    '9': ObjectId('66a344aa84e8989bb3179750'),
+    '10': ObjectId('66a344aa84e8989bb3179751'),
+    '11': ObjectId('66a344aa84e8989bb3179752'),
+    '12': ObjectId('66a344aa84e8989bb3179753'),
+    '13': ObjectId('66a344aa84e8989bb3179754'),
+    '14': ObjectId('66a344aa84e8989bb3179755'),
+    '15': ObjectId('66a344aa84e8989bb3179756'),
+    '16': ObjectId('66a344aa84e8989bb3179757'),
+    '17': ObjectId('66a344aa84e8989bb3179758'),
+    '18': ObjectId('66a344aa84e8989bb3179759'),
+    '19': ObjectId('66a344aa84e8989bb317975a')
+  }
+}
+
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+7.Collection_Company_drives
+db.company_drives.insertMany(
+[ 
+{user_id: ObjectId('66a33a3784e8989bb3179701'), compant_name: 'Zoho', interview_date: '2020-10-16', placement: 'Selected' },
+{user_id: ObjectId('66a33a3784e8989bb3179702'), compant_name: 'Netflix', interview_date: '2020-10-20', placement: 'Selected' },
+{user_id: ObjectId('66a33a3784e8989bb3179703'), compant_name: 'Tcs', interview_date: '2020-10-27', placement: 'Selected' },
+{user_id: ObjectId('66a33a3784e8989bb3179704'), compant_name: 'Infosys', interview_date: '2021-04-15', placement: 'Rejected' },
+{user_id: ObjectId('66a33a3784e8989bb3179705'), compant_name: 'Atos', interview_date: '2020-10-23', placement: 'Rejected' },
+{user_id: ObjectId('66a33a3784e8989bb3179706'), compant_name: 'Capgemini', interview_date: '2020-10-31', placement: 'Rejected' },
+{user_id: ObjectId('66a33a3784e8989bb3179707'), compant_name: 'Cts', interview_date: '2022-03-25', placement: 'Selected' },
+{user_id: ObjectId('66a33a3784e8989bb3179708'), compant_name: 'Verizon', interview_date: '2020-12-25', placement: 'Selected' },
+{user_id: ObjectId('66a33a3784e8989bb3179709'), compant_name: 'Hexaware', interview_date: '2023-11-05', placement: 'Selected' },
+{user_id: ObjectId('66a33a3784e8989bb317970a'), compant_name: 'Accenture', interview_date: '2022-03-25', placement: 'Rejected' },
+{user_id: ObjectId('66a33a3784e8989bb3179714'), compant_name: 'Zoho', interview_date: '2020-10-16', placement: 'Selected' },
+{user_id: ObjectId('66a33a3784e8989bb317970c'), compant_name: 'Netflix', interview_date: '2020-10-20', placement: 'Selected' },
+{user_id: ObjectId('66a33a3784e8989bb317970d'), compant_name: 'Tcs', interview_date: '2020-10-27', placement: 'Selected' },
+{user_id: ObjectId('66a33a3784e8989bb317970e'), compant_name: 'Infosys', interview_date: '2021-04-15', placement: 'Rejected' },
+{user_id: ObjectId('66a33a3784e8989bb317970f'), compant_name: 'Atos', interview_date: '2020-10-23', placement: 'Rejected' },
+{user_id: ObjectId('66a33a3784e8989bb3179710'), compant_name: 'Capgemini', interview_date: '2020-10-31', placement: 'Rejected' },
+{user_id: ObjectId('66a33a3784e8989bb3179711'), compant_name: 'Cts', interview_date: '2022-03-25', placement: 'Selected' },
+{user_id: ObjectId('66a33a3784e8989bb3179712'), compant_name: 'Verizon', interview_date: '2020-12-25', placement: 'Selected' },
+{user_id: ObjectId('66a33a3784e8989bb3179713'), compant_name: 'Hexaware', interview_date: '2023-11-05', placement: 'Selected' },
+{user_id: ObjectId('66a33a3784e8989bb317970b'), compant_name: 'Accenture', interview_date: '2022-03-25', placement: 'Rejected' }
+ ]
+)
+
+
+company_drives_id's
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('66a36d0884e8989bb317976f'),
+    '1': ObjectId('66a36d0884e8989bb3179770'),
+    '2': ObjectId('66a36d0884e8989bb3179771'),
+    '3': ObjectId('66a36d0884e8989bb3179772'),
+    '4': ObjectId('66a36d0884e8989bb3179773'),
+    '5': ObjectId('66a36d0884e8989bb3179774'),
+    '6': ObjectId('66a36d0884e8989bb3179775'),
+    '7': ObjectId('66a36d0884e8989bb3179776'),
+    '8': ObjectId('66a36d0884e8989bb3179777'),
+    '9': ObjectId('66a36d0884e8989bb3179778'),
+    '10': ObjectId('66a36d0884e8989bb3179779'),
+    '11': ObjectId('66a36d0884e8989bb317977a'),
+    '12': ObjectId('66a36d0884e8989bb317977b'),
+    '13': ObjectId('66a36d0884e8989bb317977c'),
+    '14': ObjectId('66a36d0884e8989bb317977d'),
+    '15': ObjectId('66a36d0884e8989bb317977e'),
+    '16': ObjectId('66a36d0884e8989bb317977f'),
+    '17': ObjectId('66a36d0884e8989bb3179780'),
+    '18': ObjectId('66a36d0884e8989bb3179781'),
+    '19': ObjectId('66a36d0884e8989bb3179782')
+  }
+}
+
+compant_name to company_name updated
+
+db.company_drives.updateMany(
+  {},
+  { $rename: { "compant_name": "company_name" } }
+)
+
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 20,
+  modifiedCount: 20,
+  upsertedCount: 0
+}
+
+Placement : Selected to Placement : Attended updated
+
+db.company_drives.updateMany(
+  { placement: 'Selected' },
+  {$set : { placement: 'Attended'} }
+);
+
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 12,
+  modifiedCount: 12,
+  upsertedCount: 0
+}
+
+Placement : Rejected to Placement : Absent updated
+
+db.company_drives.updateMany(
+  { placement: 'Rejected' },
+  { $set: { placement: 'Absent' } }
+);
+
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 8,
+  modifiedCount: 8,
+  upsertedCount: 0
+}

@@ -1,0 +1,206 @@
+1. Find all the topics and tasks which are thought in the month of October
+  Query:
+        db.tasks.aggregate([
+        {
+        $match:{
+        task_submission_date: { $regex: /^2020-10/ }
+        }
+        },
+        {
+        $lookup: {
+        from: 'topics',
+        localField: 'topic_id',
+        foreignField: '_id',
+        as: 'oct_month_topic_info'
+        }
+        },
+        {
+        $unwind: '$oct_month_topic_info'
+        },
+        {
+        $project: {
+        _id: 0,
+        user_id: 1,
+        task_submission_date: 1,
+        task_name: 1,
+        topic_name: '$oct_month_topic_info.topic_name'
+        }
+        }
+        ]).toArray();
+
+2. Find all the company drives which appeared between 15 oct-2020 and 31-oct-2020
+  Query:
+        db.company_drives.aggregate([
+        {
+        $match: {
+        interview_date: {
+        $gte: '2020-10-15',
+        $lte: '2020-10-31'
+        }
+        }
+        },
+        {
+        $project:{
+        placement: 0
+        }
+        }
+        ]).toArray();
+
+3. Find all the company drives and students who are appeared for the placement
+  Query:
+        db.company_drives.aggregate(
+          {
+        $match:{
+        placement:{
+        $eq: 'Attended'
+        }
+        }
+        },
+          {
+        $lookup:{
+        from: 'users',
+        localField: 'user_id',
+        foreignField: '_id',
+        as: 'userInfo'
+        }
+        },
+          {$unwind: '$userInfo'},
+          {
+        $replaceRoot:{
+        newRoot:{
+        $mergeObjects:[
+          {
+        user_name: '$userInfo.user_name',
+        email: '$userInfo.email'
+        },
+          {
+        company_name: '$company_name',
+        interview_date: '$interview_date',
+        placement: '$placement'
+        }
+        ]
+        }
+        }
+        }
+        ).toArray();
+
+4. Find the number of problems solved by the user in codekata
+  Query:
+        db.codekata.aggregate(
+          {
+        $lookup: {
+        from: 'users',
+        localField: 'user_id',
+        foreignField: '_id',
+        as: 'user_details'
+        }
+        },
+          { $unwind: '$user_details' },
+          {
+        $replaceRoot:{
+        newRoot:{
+        $mergeObjects:[
+          {
+        user_name: '$user_details.user_name',
+        email: '$user_details.email'
+        },
+        { proble_solved: '$problem_solved' }
+        ]
+        }
+        }
+        }
+        ).toArray();
+
+5. Find all the mentors with who has the mentee's count more than 15
+  Query:
+        db.users.aggregate(
+          {
+        $group: {
+        _id: '$mentor_id',
+        mantee_count: { $sum: 1}
+        }
+        },
+          {
+        $match: { mantee_count: { $gt:15 } }
+        },
+          {
+        $lookup:{
+        from: 'mentors',
+        localField: '_id',
+        foreignField: '_id',
+        as: 'mentor_info'
+        }
+        },
+          { $unwind: '$mentor_info' },
+          {
+        $project:{
+        mentor_name: '$mentor_info.mentor_name',
+        batch_id: '$mentor_info.batch_id',
+        mantee_count:1
+        }
+        }
+        ).toArray();
+
+6. Find the number of users who are absent and task is not submitted  between 15 oct-2020 and 31-oct-2020
+  Query:
+        db.tasks.aggregate([
+          {
+        $match:{
+        submission_status: 'false',
+        task_submission_date:{
+        $gte: '2020-10-15',
+        $lte: '2020-10-31'
+        }
+        }
+        },
+          {
+        $lookup:{
+        from: 'attendance',
+        localField: 'user_id',
+        foreignField: 'user_id',
+        as: 'attendance_info'
+        }
+        },
+          { $unwind: '$attendance_info' },
+          {
+        $match: { 'attendance_info.attended': false }
+          },
+          {
+        $lookup:{
+        from: 'users',
+        localField: 'user_id',
+        foreignField: '_id',
+        as: 'user_info'
+        }
+        },
+          { $unwind: '$user_info'},
+          {
+        $lookup:{
+        from: 'topics',
+        localField: 'topic_id',
+        foreignField: "_id",
+        as: 'topic_info'
+        }
+        },
+          { $unwind : '$topic_info'},
+          {
+        $group:{
+        _id: 'user_id',
+        user_name: { $first: '$user_info.user_name'},
+        topic_name: { $first: '$topic_info.topic_name'},
+        task_name: { $first: '$task_name'},
+        task_submission_date: { $first: '$task_submission_date'},
+        submission_status: { $first: '$submission_status'}
+        }
+        },
+          {
+        $project:{
+        _id: 0,
+        user_name: 1,
+        topic_name: 1,
+        task_name: 1,
+        task_submission_date: 1,
+        submission_status: 1
+        }
+        }
+        ]).toArray();
